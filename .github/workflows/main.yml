@@ -23,16 +23,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Pre-Deployment Test
-        run: | 
-          sam local invoke crcServerlessFunction -e events/event.json
-      #    sam local start-api
 
-      - name: Check https status
-        uses: lakuapik/gh-actions-http-status@v1
-        with:
-          sites: '["https://johnkoenig.ninja", "http://127.0.0.1:3000/Prod/johnkoenigninjasitecounter/"]'
-          expected: '[200, 200]'
   
   build-deploy:
     runs-on: ubuntu-latest
@@ -45,6 +36,18 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
+
+      - name: Pre-Deployment Test
+        run: | 
+          sam local invoke crcServerlessFunction -e events/event.json
+      #    sam local start-api
+
+      - name: Check https status
+        uses: lakuapik/gh-actions-http-status@v1
+        with:
+          sites: '["https://johnkoenig.ninja", "http://127.0.0.1:3000/Prod/johnkoenigninjasitecounter/"]'
+          expected: '[200, 200]'
+
       # sam build 
       - run: sam build --use-container
 
