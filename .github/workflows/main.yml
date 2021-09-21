@@ -27,8 +27,8 @@ jobs:
         run: | 
           sam local invoke crcServerlessFunction -e events/event.json
           sam local start-api
-          
-      - name: Check https status
+
+      #- name: Check https status
         uses: lakuapik/gh-actions-http-status@v1
         with:
           sites: '["http://github.com", "https://education.github.com", "http://127.0.0.1:3000/Prod/johnkoenigninjasitecounter/"]'
