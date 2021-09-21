@@ -23,10 +23,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Pre-Deployment Test
-        run: | 
-          sam local invoke crcServerlessFunction -e events/event.json
-          sam local start-api
+      #- name: Pre-Deployment Test
+      #  run: | 
+      #    sam local invoke crcServerlessFunction -e events/event.json
+      #    sam local start-api
 
       #- name: Check https status
         uses: lakuapik/gh-actions-http-status@v1
