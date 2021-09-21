@@ -52,5 +52,5 @@ jobs:
       - run: sam deploy #--no-confirm-changeset --no-fail-on-empty-changeset --stack-name sitecounter --s3-bucket aws-sam-cli-managed-default-samclisourcebucket-12lkd9h2oeinw --capabilities CAPABILITY_IAM --region us-east-2
 
 # Post Deployment Test
-      - name: Post Deployment Test
-      - run: sam https://40vk7pg898.execute-api.us-east-2.amazonaws.com/Prod/johnkoenigninjasitecounter/
+#      - name: Post Deployment Test
+#      - run: sam https://40vk7pg898.execute-api.us-east-2.amazonaws.com/Prod/johnkoenigninjasitecounter/
