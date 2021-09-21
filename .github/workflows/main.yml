@@ -26,8 +26,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Pre-Deployment Test
         run: |
-          sam local invoke crcServerlessFunction -e events/event.json
-          sam local start-api
+          r = requests.get('https://www.github.com')
+          r.status_code
+      #   sam local invoke crcServerlessFunction -e events/event.json
+      #    sam local start-api
       #    curl http://www.google.com
   
   build-deploy:
