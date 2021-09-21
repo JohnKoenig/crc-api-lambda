@@ -23,6 +23,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Check https status
+        uses: lakuapik/gh-actions-http-status@v1
+        with:
+          sites: '["http://github.com", "https://education.github.com"]'
+          expected: '[301, 200]'
       # Runs a set of commands using the runners shell
       #- name: Pre-Deployment Test
       #  run: | 
