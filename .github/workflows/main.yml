@@ -23,7 +23,8 @@ jobs:
       - name: Pre-Deployment Test
         run: | 
           sam local invoke crcServerlessFunction -e events/event.json
-          curl "http://localhost/Prod/johnkoenigninjasitecounter/"
+          sam local start-api
+          curl "http://127.0.0.1:3000/Prod/johnkoenigninjasitecounter/"
 
       - name: Check https status
         uses: lakuapik/gh-actions-http-status@v1
