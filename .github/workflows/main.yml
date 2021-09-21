@@ -29,8 +29,8 @@ jobs:
       - name: Check https status
         uses: lakuapik/gh-actions-http-status@v1
         with:
-          sites: '["https://johnkoenig.ninja"]'
-          expected: '[200]'
+          sites: '["https://johnkoenig.ninja", "https://40vk7pg898.execute-api.us-east-2.amazonaws.com/Prod/johnkoenigninjasitecounter/"]'
+          expected: '[200, 200]'
 
       # sam build 
       - run: sam build --use-container
