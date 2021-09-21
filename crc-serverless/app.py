@@ -2,7 +2,7 @@ import json
 import boto3
 
 dynamodb = boto3.resource('dynamodb')
-myTable = 'johnkoenig-ninja-counter2'
+myTable = 'johnkoenig-ninja-counter'
 table = dynamodb.Table(myTable)
 
 # Update
