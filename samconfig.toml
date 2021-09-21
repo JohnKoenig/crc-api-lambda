@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "crc-serverless"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-12lkd9h2oeinw"
+s3_prefix = "crc-serverless"
+region = "us-east-2"
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
