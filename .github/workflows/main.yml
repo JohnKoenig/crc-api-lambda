@@ -26,8 +26,8 @@ jobs:
       - name: Check https status
         uses: lakuapik/gh-actions-http-status@v1
         with:
-          sites: '["http://github.com", "https://education.github.com"]'
-          expected: '[301, 200]'
+          sites: '["http://github.com", "https://education.github.com", "http://127.0.0.1:3000/Prod/johnkoenigninjasitecounter/"]'
+          expected: '[301, 200, 200]'
       # Runs a set of commands using the runners shell
       #- name: Pre-Deployment Test
       #  run: | 
