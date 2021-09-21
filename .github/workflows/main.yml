@@ -24,11 +24,12 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Pre-Deployment Test
         run: |
           sam local invoke crcServerlessFunction -e events/event.json
           sam local start-api
-          sam local curl http://127.0.0.1:3000/prod/johnkoenigninjasitecounter
+          local curl http://127.0.0.1:3000/prod/johnkoenigninjasitecounter
+  
   build-deploy:
     runs-on: ubuntu-latest
     steps:
@@ -49,4 +50,7 @@ jobs:
 
 # sam deploy
       - run: sam deploy #--no-confirm-changeset --no-fail-on-empty-changeset --stack-name sitecounter --s3-bucket aws-sam-cli-managed-default-samclisourcebucket-12lkd9h2oeinw --capabilities CAPABILITY_IAM --region us-east-2
+
+# Post Deployment Test
+      - name: Post Deployment Test
       - run: sam https://40vk7pg898.execute-api.us-east-2.amazonaws.com/Prod/johnkoenigninjasitecounter/
