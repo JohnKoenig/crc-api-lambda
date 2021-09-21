@@ -28,7 +28,7 @@ jobs:
         run: |
           sam local invoke crcServerlessFunction -e events/event.json
           sam local start-api
-          curl http://www.google.com
+      #    curl http://www.google.com
   
   build-deploy:
     runs-on: ubuntu-latest
@@ -36,8 +36,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - uses: aws-actions/setup-sam@v1
-        #with:
-        #  version: 1.31.0
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
