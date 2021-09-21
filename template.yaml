@@ -11,7 +11,7 @@ Resources:
   crcServerlessFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: crc-serverless/
+      CodeUri: crc-serverless7/
       Handler: app.lambda_handler
       Runtime: python3.9
       Policies: [AWSLambdaDynamoDBExecutionRole, AmazonDynamoDBFullAccess, AWSLambdaInvocation-DynamoDB]
@@ -28,7 +28,7 @@ Outputs:
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
   crcServerlessApi:
     Description: "API Gateway endpoint URL for Prod stage for Site Counter function"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/johnkoenig_ninja_sitecounter/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/johnkoenigninjasitecounter/"
   crcServerlessFunction:
     Description: "Site Counter Lambda Function ARN"
     Value: !GetAtt crcServerlessFunction.Arn

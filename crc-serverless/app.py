@@ -7,7 +7,7 @@ table = dynamodb.Table(myTable)
 
 # Update
 def lambda_handler(event, context):
-    myTable = table.7update_item(
+    myTable = table.update_item(
         Key={
             'site': 'johnkoenig.ninja'
         },
